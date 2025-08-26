@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Advisor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-briefcase header-icon"></i>
+                <h1>AI Career Advisor</h1>
+                <p>Upload your resume and get personalized job recommendations</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-card">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>Upload Your Resume</h2>
+                    <p>Upload your resume in PDF, DOC, or TXT format, or paste the text directly</p>
+                    
+                    <div class="upload-options">
+                        <div class="file-upload">
+                            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,.txt" hidden>
+                            <button class="upload-btn" onclick="document.getElementById('resumeFile').click()">
+                                <i class="fas fa-upload"></i>
+                                Choose File
+                            </button>
+                            <span id="fileName" class="file-name"></span>
+                        </div>
+                        
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+                        
+                        <div class="text-input">
+                            <textarea id="resumeText" placeholder="Paste your resume text here..." rows="8"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button class="analyze-btn" id="analyzeBtn" disabled>
+                        <i class="fas fa-search"></i>
+                        Analyze Resume
+                    </button>
+                </div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-card">
+                    <div class="spinner"></div>
+                    <h3>Analyzing Your Resume</h3>
+                    <p>Extracting skills, experience, and matching job opportunities...</p>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2><i class="fas fa-chart-line"></i> Career Analysis Results</h2>
+                    <button class="new-analysis-btn" id="newAnalysisBtn">
+                        <i class="fas fa-plus"></i>
+                        New Analysis
+                    </button>
+                </div>
+
+                <div class="analysis-summary" id="analysisSummary">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+
+                <div class="job-recommendations" id="jobRecommendations">
+                    <!-- Job recommendations will be populated by JavaScript -->
+                </div>
+
+                <div class="improvement-suggestions" id="improvementSuggestions">
+                    <!-- Improvement suggestions will be populated by JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Career Advisor. Helping you find your next career opportunity.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
